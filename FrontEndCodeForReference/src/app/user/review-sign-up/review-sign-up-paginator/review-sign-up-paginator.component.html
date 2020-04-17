@@ -1,0 +1,9 @@
+<nav>
+    <ul class="pagination justify-content-center">
+        <li><button (click)="decrement()" [disabled]="startIndex &lt;= 0" class="btn page-link">&lt;&lt;</button></li>
+        <li *ngFor="let pageNum of numArray; index as i"  class="page-item">
+            <button *ngIf="i>=startIndex && i&lt;endIndex" (click)="pageNumberClicked(i)" class="btn page-link btn-outline-primary">{{i+1}}</button>
+        </li>
+        <li><button (click)="increment()" [disabled]="endIndex >= numArray.length" class="btn page-link">&gt;&gt;</button></li>
+    </ul>
+</nav>

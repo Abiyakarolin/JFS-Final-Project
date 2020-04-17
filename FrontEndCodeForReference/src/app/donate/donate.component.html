@@ -1,0 +1,53 @@
+<div class="custom-pad">
+    <div class="card shadow shadow-lg border-dark text-dark">
+        <div class="card-header text-white bg-dark">
+            <h4 class="card-title">Donate Now</h4>
+        </div>
+        <div class="card-body">
+            <form (ngSubmit)="donate()" [formGroup]="donateForm" class="card-text">
+                <div class="form-group">
+                    <label for="amount">Amount:</label>
+                    <input type="text" id="amount" name="amount" formControlName="amount" class="form-control">
+                    <div *ngIf="amount.invalid && amount.touched" class="invalid">
+                        Amount doesn't seem right. Minimum amount is 100.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cardNum">Card Number:</label>
+                    <input type="text" id="cardNum" name="cardNum" formControlName="cardNum" class="form-control">
+                    <div *ngIf="cardNum.invalid && cardNum.touched" class="invalid">
+                        Card Number doesn't seem right. It must be 16 digits.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cardName">Name on Card:</label>
+                    <input type="text" id="cardName" name="cardName" formControlName="cardName" class="form-control">
+                    <div *ngIf="cardName.invalid && cardName.touched" class="invalid">
+                        Name on Card doesn't seem right. It must include only alphabets and space.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cardExpiry">Card Expiry:</label>
+                    <input type="month" id="cardExpiry" name="cardExpiry" formControlName="cardExpiry" class="form-control" min="2019-12">
+                    <div *ngIf="cardExpiry.invalid && cardExpiry.touched" class="invalid">
+                        Card Expiry doesn't seem right.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV:</label>
+                    <input type="password" id="cvv" name="cvv" formControlName="cvv" class="form-control">
+                    <div *ngIf="cvv.invalid && cvv.touched" class="invalid">
+                        CVV doesn't seem right. Must be 3 digits only.
+                    </div>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-dark" [disabled]="!donateForm.valid">Donate</button>
+                </div>
+                <div *ngIf="msg" class="invalid">
+                    <br>
+                    {{msg}}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+.custom-pad{
+    padding-top: 5rem;
+    padding-bottom: 6.4rem;
+    padding-right: 25rem;
+}
+.custom-card{
+    width: 20rem;
+    height: 24rem;
+}
+
+.custom-background{
+    background-image: url(/assets/fitness.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}

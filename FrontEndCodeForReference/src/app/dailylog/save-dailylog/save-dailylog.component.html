@@ -1,0 +1,73 @@
+<div class="custom-pad">
+    <div>
+        <div class="card shadow shadow-lg border-dark text-dark">
+            <div class="card-header text-white bg-dark">
+                <h4 class="card-title">Save Daily Log</h4>
+            </div>
+            <div class="card-body">
+                <div *ngIf="saveDailyLogForm; else loading">
+                    <form [formGroup]="saveDailyLogForm" (ngSubmit)="onSave()" class="card-text">
+                        <div class="form-group">
+                            <label for="breakfast">Breakfast:</label>
+                            <input type="text" id="breakfast" name="breakfast" formControlName="breakfast" placeholder="Enter Breakfast" class="form-control">
+                            <div *ngIf="breakfast.invalid && breakfast.touched" class="invalid">
+                                Breakfast doesn't seem right
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="lunch">Lunch:</label>
+                                <input type="text" id="lunch" name="lunch" formControlName="lunch" placeholder="Enter Lunch" class="form-control">
+                                <div *ngIf="lunch.invalid && lunch.touched" class="invalid">
+                            Lunch doesn't seem right
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="dinner">Dinner:</label>
+                            <input type="text" id="dinner" name="dinner" formControlName="dinner" placeholder="Enter Dinner" class="form-control">
+                            <div *ngIf="dinner.invalid && dinner.touched" class="invalid">
+                                Dinner doesn't seem right
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="fruitsConsumed">Fruits Consumed:</label>
+                            <input type="text" id="fruitsConsumed" name="fruitsConsumed" formControlName="fruitsConsumed" placeholder="Enter Fruits Consumed" class="form-control">
+                            <div *ngIf="fruitsConsumed.invalid && fruitsConsumed.touched" class="invalid">
+                                Fruits Consumed doesn't seem right
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="vegetablesConsumed">Vegetables Consumed:</label>
+                            <input type="text" id="vegetablesConsumed" name="vegetablesConsumed" formControlName="vegetablesConsumed" placeholder="Enter Vegetables Consumed" class="form-control">
+                            <div *ngIf="vegetablesConsumed.invalid && vegetablesConsumed.touched" class="invalid">
+                                Vegetables Consumed doesn't seem right
+                            </div>
+                        </div>   
+                        <div class="form-group">
+                            <label for="workoutDone">Workout Done:</label>
+                            <input type="text" id="workoutDone" name="workoutDone" formControlName="workoutDone" placeholder="Enter Workout Done" class="form-control">
+                            <div *ngIf="workoutDone.invalid && workoutDone.touched" class="invalid">
+                                Workout Done doesn't seem right
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <br>
+                            <button type="submit" class="btn btn-dark" [disabled]="!saveDailyLogForm.valid">Save</button>
+                            &nbsp;&nbsp;&nbsp;
+                            <button type="button" class="btn btn-dark" (click)="onViewHistory()">View History</button>
+                        </div>
+                        <div *ngIf="msg" class="invalid col">
+                            {{msg}}
+                        </div>      
+                    </form>
+                </div>
+                <ng-template #loading>
+                    <p *ngIf="displayForm; else noGroup">Please Wait!!! Loading...</p>
+                </ng-template>
+                <ng-template #noGroup>
+                    <p>You haven't been assigned any batch yet. Contact your program admin.</p>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</div>
+

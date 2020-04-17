@@ -1,0 +1,47 @@
+<div class="custom-pad">
+        <div class="card shadow shadow-lg border-dark text-dark">
+            <div class="card-header text-white bg-dark">
+                <h4 class="card-title">Monthly Measurement Chart History</h4>
+            </div>
+            <div class="card-body">
+                <div class="card-text">
+                    <div *ngIf="monthlyMeasurementCharts && monthlyMeasurementCharts.length>0; else noLogs">
+                        <table class="table">
+                            <thead class="thead">
+                                <tr>
+                                    <th>Date (yyyy-MM)</th>
+                                    <th>Height</th>
+                                    <th>Weight</th>
+                                    <th>Chest</th>
+                                    <th>Waist</th>
+                                    <th>Shoulder</th>
+                                    <th>Biceps</th>
+                                    <th>Forearm</th>
+                                    <th>Leg</th>
+                                    <th>Thighs</th>
+                                    <th>B.M.I</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let monthlyMeasurementChart of monthlyMeasurementCharts">
+                                    <td>{{monthlyMeasurementChart.id.date}}</td>
+                                    <td>{{monthlyMeasurementChart.height}}</td>
+                                    <td>{{monthlyMeasurementChart.weight}}</td>
+                                    <td>{{monthlyMeasurementChart.chest}}</td>
+                                    <td>{{monthlyMeasurementChart.waist}}</td>
+                                    <td>{{monthlyMeasurementChart.shoulder}}</td>
+                                    <td>{{monthlyMeasurementChart.biceps}}</td>
+                                    <td>{{monthlyMeasurementChart.forearm}}</td>
+                                    <td>{{monthlyMeasurementChart.leg}}</td>
+                                    <td>{{monthlyMeasurementChart.thighs}}</td>
+                                    <td>{{monthlyMeasurementChart.bmi}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <ng-template #noLogs><p class="invalid">No Logs Found!</p></ng-template>
+                </div>
+            </div>
+        </div>
+    </div>
+    

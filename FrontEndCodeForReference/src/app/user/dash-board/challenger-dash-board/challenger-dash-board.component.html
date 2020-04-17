@@ -1,0 +1,74 @@
+<div>
+    <div class="album">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card mb-4 border-success shadow">
+                        <div class="card-header text-white bg-success">
+                            <h4 class="card-title">Download Plan</h4>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Click below to view and download the weekly diet and workout plan. You need to follow this plan for the current week so make sure you go through it carefully.</p>
+                            <a routerLink="/plan/download" class="btn btn-success">Download</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4 border-danger shadow">
+                        <div class="card-header text-white bg-danger">
+                            <h4 class="card-title">Read Messages</h4>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Click below to read all the messages posted for you by the motivators and/or program administrators. It could be something useful for you.</p>
+                            <a routerLink="/message/read/userlist" class="btn btn-danger">Read</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4 border-warning shadow bg-white">
+                        <div class="card-header text-white bg-warning">
+                            <h5 class="card-title">Post Messages</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Click below to communicate with the motivators or challengers by posting messages for them. Make sure you send appropriate messages.</p>
+                            <a routerLink="/message/send" class="btn btn-warning text-white">Post</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4 border-warning shadow">
+                        <div class="card-header text-white bg-warning">
+                            <h4 class="card-title">Save Daily Log</h4>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Click below to save the daily log that captures information like breakfast, lunch and dinner, workout done, etc. If batch has expired, this will be disabled.</p>
+                            <button [disabled]="isBatchExpired" routerLink="/dailylog/save" class="btn btn-warning text-white">Save</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4 border-dark shadow-sm">
+                        <div class="card-header text-white bg-dark">
+                            <h4 class="card-title">Save Monthly Chart</h4>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Click below to save the monthly chart that captures details of your measurements (height, weight, etc). If batch has expired, it will be disabled.</p>
+                            <button routerLink="/monthlyMeasurementChart/save" [disabled]="isBatchExpired" class="btn btn-dark">Save</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4 border-primary shadow-sm">
+                        <div class="card-header text-white bg-primary">
+                            <h4 class="card-title">Enroll</h4>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Click below to enroll for the next batch. This option will be enabled only if you were assigned a batch and the batch has been completed.</p>
+                            <button routerLink="/user/enroll" [disabled]="!isBatchExpired" class="btn btn-primary">Register</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+.custom-card{
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+ }
+ .custom-background{
+    /* background-image: url(/assets/fitness-5.jpg); */
+    background-repeat: no-repeat;
+    background-size: cover;
+ }

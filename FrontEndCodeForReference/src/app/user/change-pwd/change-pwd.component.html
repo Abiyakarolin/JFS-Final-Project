@@ -1,0 +1,43 @@
+<div class="custom-pad"> 
+    <div class="card mx-auto border-dark shadow shadow-lg" style="width:65rem;">
+        <div class="card-header text-white bg-dark">
+            <h5 class="card-title">Change Your Password</h5>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="changePwdForm" (ngSubmit)="changePwd()">
+                <div class="form-group">
+                    <label for="oldPassword">Old Password:</label>
+                    <input type="password" id="oldPassword" name="oldPassword" formControlName="oldPassword" placeholder="Enter Your Old Password" class="form-control">
+                    <div *ngIf="oldPassword.invalid && oldPassword.touched" class="invalid">
+                        Password minimum length 8 Characters
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="newPassword">New Password:</label>
+                    <input type="password" id="newPassword" name="newPassword" formControlName="newPassword" placeholder="Enter Your New Password" class="form-control">
+                    <div *ngIf="newPassword.invalid && newPassword.touched" class="invalid">
+                        New Password doesn't seem right
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="confirmNewPassword">Confirm New Password:</label>
+                    <input type="password" id="confirmNewPassword" name="confirmNewPassword" formControlName="confirmNewPassword" placeholder="Confirm Your New Password" class="form-control">
+                    <div *ngIf="confirmNewPassword.invalid && confirmNewPassword.touched" class="invalid">
+                        Confirm Password doesn't seem right
+                    </div>
+                </div>
+                <br>
+                <div class="">
+                    <button type="submit" class="btn btn-dark" [disabled]="!changePwdForm.valid">Change Password</button>
+                    &nbsp;&nbsp;&nbsp;
+                    <button type="submit" class="btn btn-dark" (click)="back()">Back</button>
+                </div>
+                <br>
+                <div *ngIf="msg" class="invalid">
+                    {{msg}}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>                
+

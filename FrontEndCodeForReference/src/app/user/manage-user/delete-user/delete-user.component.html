@@ -1,0 +1,13 @@
+<div class="custom-pad">
+    <div class="card mx-auto border-dark shadow shadow-lg" style="width:24rem;height:18rem;">
+        <div class="card-body">
+            <br><br>
+            <h4 class="card-title" style="text-align: center;">Are you sure you want to delete this user?</h4><br>
+            <p align="center">
+            <button class="btn btn-dark" (click)="delete(true)">Yes</button>&nbsp;&nbsp;
+            <button class="btn btn-dark"(click)="delete(false)">No</button>
+            </p>
+            {{message}}
+        </div>
+    </div>
+</div>

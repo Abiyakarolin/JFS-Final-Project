@@ -1,0 +1,93 @@
+<div class="custom-pad">
+    <div *ngIf="monthlyMeasurementChartForm; else loading">
+        <div class="card shadow shadow-lg border-dark text-dark">
+            <div class="card-header text-white bg-dark">
+                <h4 class="card-title">Save Monthly Measurement Chart</h4>
+            </div>
+            <div class="card-body">
+                <div class="card-text">
+                    <p>{{status}}</p>
+                </div>
+                <div *ngIf="displayForm">
+                    <form [formGroup]="monthlyMeasurementChartForm" (ngSubmit)="onSave()" class="card-text">
+                        <div class="form-group">
+                            <label for="height">Height (cms):</label>
+                            <input type="text" id="height" name="height" formControlName="height" placeholder="Enter Your Height in cms" class="form-control">
+                            <div *ngIf="height.invalid && height.touched" class="invalid">
+                                Height doesn't seem right
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="weight">Weight (kgs):</label>
+                            <input type="text" id="weight" name="weight" formControlName="weight" placeholder="Enter Your Weight in kgs" class="form-control">
+                            <div *ngIf="weight.invalid && weight.touched" class="invalid">
+                                Weight doesn't seem right
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="chest">Chest (cms):</label>
+                            <input type="text" id="chest" name="chest" formControlName="chest" placeholder="Enter Your Chest in cms" class="form-control">
+                            <div *ngIf="chest.invalid && chest.touched" class="invalid">
+                                Chest doesn't seem right
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="waist">Waist (cms):</label>
+                            <input type="text" id="waist" name="waist" formControlName="waist" placeholder="Enter Your Waist in cms" class="form-control">
+                            <div *ngIf="waist.invalid && waist.touched" class="invalid">
+                                Waist doesn't seem right
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="shoulder">Shoulder (cms):</label>
+                            <input type="text" id="shoulder" name="shoulder" formControlName="shoulder" placeholder="Enter Your Shoulder in cms" class="form-control">
+                            <div *ngIf="shoulder.invalid && shoulder.touched" class="invalid">
+                                Shoulder doesn't seem right
+                            </div>
+                        </div>   
+                        <div class="form-group">
+                            <label for="biceps">Biceps (cms):</label>
+                            <input type="text" id="biceps" name="biceps" formControlName="biceps" placeholder="Enter Your Biceps in cms" class="form-control">
+                            <div *ngIf="biceps.invalid && biceps.touched" class="invalid">
+                                Biceps doesn't seem right
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="forearm">Forearm (cms):</label>
+                            <input type="text" id="forearm" name="forearm" formControlName="forearm" placeholder="Enter Your Forearm in cms" class="form-control">
+                            <div *ngIf="forearm.invalid && forearm.touched" class="invalid">
+                                Forearm doesn't seem right
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="leg">Leg (cms):</label>
+                            <input type="text" id="leg" name="leg" formControlName="leg" placeholder="Enter Your Leg in cms" class="form-control">
+                            <div *ngIf="leg.invalid && leg.touched" class="invalid">
+                                Leg doesn't seem right
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="thighs">Thighs (cms):</label>
+                            <input type="text" id="thighs" name="thighs" formControlName="thighs" placeholder="Enter Your Thighs in cms" class="form-control">
+                            <div *ngIf="thighs.invalid && thighs.touched" class="invalid">
+                                Thighs doesn't seem right
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <br>
+                            <button type="submit" class="btn btn-dark" [disabled]="!monthlyMeasurementChartForm.valid">Save</button>
+                            &nbsp;&nbsp;&nbsp;
+                            <button type="button" class="btn btn-dark" (click)="onViewHistory()">View History</button>
+                        </div>
+                        <div *ngIf="msg" class="invalid col">
+                            {{msg}}
+                        </div>      
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ng-template #loading>
+        Please Wait!!! Loading...
+    </ng-template>
+</div>

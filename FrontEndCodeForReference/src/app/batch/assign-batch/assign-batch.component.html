@@ -1,0 +1,49 @@
+<div class="custom-pad">
+    <div class="card shadow shadow-lg border-danger text-dark">
+        <div class="card-body">
+            <h5 class="card-title">Assign Batch To Challengers and Motivators</h5>
+            <p align="center" class="invalid">{{msg}}</p>
+            <div class="card-text">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>User Id</th>
+                            <th>Full Name</th>
+                            <th>Dietary Custom</th>
+                            <th>BMI</th>
+                            <th>Role</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor='let user of users'>
+                            <td>{{user.userId}}</td>
+                            <td>{{user.fullname}}</td>
+                            <td>{{user.dietaryCustom}}</td>
+                            <td>{{user.bmi}}</td>
+                            <td>{{user.userType}}</td>
+                            <td>
+                                <select (change)="onBatchSelect($event.target.value, user)" class="form-control">
+                                    <option selected value="Select Batch">Select Batch</option>
+                                    <option *ngFor="let batch of batches" value="{{batch.batchId}}">{{batch.batchId}}</option>
+                                </select>
+                            </td>
+                            <td *ngIf="user.groupsId">
+                                <select (change)="onGroupSelect($event.target.value, user)" class="form-control">
+                                    <option selected value="Select Group">Select Group</option>
+                                    <option *ngFor="let group of groups" value="{{group.groupsId}}">{{group.groupsId}}</option>
+                                </select>
+                            </td>
+                            <td *ngIf="user.groupsId && user.groupsId.groupsId">
+                                <button (click)="onAssign(user)" class="btn btn-dark">Assign</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

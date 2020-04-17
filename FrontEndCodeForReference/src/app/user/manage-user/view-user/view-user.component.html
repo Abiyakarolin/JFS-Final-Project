@@ -1,0 +1,113 @@
+<div class="custom-pad custom-background">    
+    <div class="card border-dark shadow shadow-lg mx-auto" style="width:38rem;">
+        <div class="card-header text-white bg-dark" style="text-align: left;">
+            <h5 class="card-title">Details of {{selectedUser.fullname}}</h5>
+        </div>
+        <div class="card-body">
+            <table class="table table-borderless table-sm">
+                <tr>
+                    <td>First Name:</td>
+                    <td>{{selectedUser.fullname}}</td>
+                </tr>
+                <tr>
+                    <td>User Id:</td>
+                    <td>{{selectedUser.userId}}</td>
+                </tr>
+                <tr>
+                    <td>Role:</td>
+                    <td>{{selectedUser.userType}}</td>
+                </tr>
+                <tr>
+                    <td>Age:</td>
+                    <td>{{selectedUser.age}}</td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td>{{selectedUser.email}}</td>
+                </tr>
+                <tr>
+                    <td>Mobile:</td>
+                    <td>{{selectedUser.mobile}}</td>
+                </tr>
+                <tr>
+                    <td>Height:</td>
+                    <td>{{selectedUser.height}}</td>
+                </tr>
+                <tr>
+                    <td>Weight:</td>
+                    <td>{{selectedUser.weight}}</td>
+                </tr>
+                <tr>
+                    <td>B.M.I:</td>
+                    <td>{{selectedUser.bmi}}</td>
+                </tr>
+                <tr>
+                    <td>Gender:</td>
+                    <td>{{selectedUser.gender}}</td>
+                </tr>
+                <tr *ngIf="selectedUser.gender == 'Female'">
+                    <td>Pregnant:</td>
+                    <td *ngIf="selectedUser.pregnantStatus;else no">Yes</td>
+                </tr>
+                <ng-template #no><td>No</td></ng-template>  
+                <tr>
+                    <td>Dietary Custom:</td>
+                    <td>{{selectedUser.dietaryCustom}}</td>
+                </tr>
+                <tr>
+                    <td>Existing Diet Restriction:</td>
+                    <td>{{selectedUser.dietaryRestriction}}</td>
+                </tr>
+                <tr>
+                    <td>Existing Medical Condition:</td>
+                    <td>{{selectedUser.medicalCondition}}</td>
+                </tr>
+                <tr>
+                    <td>Address:</td>
+                    <td>{{selectedUser.address}}</td>
+                </tr>
+                <tr>
+                    <td>City:</td>
+                    <td>{{selectedUser.city}}</td>
+                </tr>
+                <tr>
+                    <td>State:</td>
+                    <td>{{selectedUser.state}}</td>
+                </tr>
+                <tr>
+                    <td>Country:</td>
+                    <td>{{selectedUser.country}}</td>
+                </tr>
+                <tr>
+                    <td>Pincode:</td>
+                    <td>{{selectedUser.pincode}}</td>
+                </tr>
+                <tr>
+                    <td>Reason for Sign Up:</td>
+                    <td>{{selectedUser.reason}}</td>
+                </tr>
+                <tr>
+                    <td>Referral Code:</td>
+                    <td>{{selectedUser.referralCode}}</td>
+                </tr>
+                <tr *ngIf="selectedUser.groupsId">
+                    <td>Batch:</td>
+                    <td>{{selectedUser.groupsId.batch.batchId}}</td>
+                </tr>
+                <tr *ngIf="selectedUser.groupsId">
+                    <td>Group:</td>
+                    <td>{{selectedUser.groupsId.groupsId}}</td>
+                </tr>
+                <tr>
+                    <td *ngIf="allowEdit" colspan="3">
+                            <button (click)="edit()" class="btn btn-dark">Edit</button>&nbsp;
+                            <button (click)="delete()" class="btn btn-dark">Delete</button>
+                    </td>
+                    <td><button class="btn btn-dark" (click)="back()">Back</button></td>
+                </tr>
+            </table>
+            
+        </div>
+    </div>
+</div>
+

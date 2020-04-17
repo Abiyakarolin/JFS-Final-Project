@@ -1,0 +1,12 @@
+.custom-pad{
+    padding-top: 1rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
+    padding-bottom: 20rem;
+}
+
+.custom-background{
+    background-image: url(/assets/fitness-5.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}

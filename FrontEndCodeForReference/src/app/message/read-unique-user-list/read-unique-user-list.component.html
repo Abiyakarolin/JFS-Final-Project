@@ -1,0 +1,16 @@
+<div class="custom-pad">
+    <div class="card shadow shadow-lg border-dark text-dark">
+        <div class="card-header text-white bg-dark">
+            <h4 class="card-title">Message Box</h4>
+        </div>
+        <div class="card-body">
+            <p>Click a User to read the conversation</p>
+            <table class="table table-borderless table-hover table-sm">
+                <tr *ngFor="let user of users">
+                   <td><button class="btn btn-dark" (click)="onClick(user)">{{user}}</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,25 @@
+<div class="custom-pad">
+    <div class="card shadow shadow-lg border-dark text-dark">
+        <div class="card-header text-white bg-dark">
+            <h4 class="card-title">Download Weekly Plan</h4>
+        </div>
+        <div class="card-body">
+            <form *ngIf="weeks;else nogroup">
+                <div class="form-group">
+                    <label for="week">Select Week-Month:</label>
+                    <select id="week" class="form-control" name="week" (change)="onSelectChange($event.target.value)">
+                        <option selected value="Select">Select</option>
+                        <option *ngFor="let week of weeks" value="{{week}}">{{week}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button type="button" [disabled]="!selectedWeek" (click)="onDownload()" class="btn btn-dark">Download</button>
+                </div>
+            </form>
+            <ng-template #nogroup>
+                <p>You haven't been assigned a batch yet. Contact your Program Admin.</p>
+            </ng-template>
+        </div>
+    </div>
+</div>
+

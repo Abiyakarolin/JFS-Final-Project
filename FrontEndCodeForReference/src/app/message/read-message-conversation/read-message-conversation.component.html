@@ -1,0 +1,13 @@
+<div class="custom-pad">
+    <div class="card shadow shadow-lg border-dark text-dark">
+        <div class="card-header text-white bg-dark">
+            <h4 class="card-title">Conversation between you and {{user2}}</h4>
+        </div>
+        <div class="card-body">
+            <div class="card-text">
+                <p *ngFor="let message of messages">
+                    {{message.from.email}} : {{message.message}}
+                </p>
+            </div>
+        </div>
+</div>

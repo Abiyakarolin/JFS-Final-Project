@@ -1,0 +1,54 @@
+<div class="custom-pad">
+    <div class="album">
+        <div class="container">
+            <div class="card mx-auto border-dark shadow-lg" style="width: 40rem;">
+                <div class="card-header bg-dark text-white">
+                    <h5>Reviews pending: {{allPendingLength}}</h5>
+                </div>
+                <div *ngIf="selectedItem" class="card-body">
+                    <table class="table table-borderless table-sm">
+                        <div class="card-text">
+                            <tr><td>Full Name:</td><td>{{selectedItem.fullname}}</td></tr>
+                            <tr><td>Age:</td><td>{{selectedItem.age}}</td></tr>
+                            <tr><td>Gender:</td><td>{{selectedItem.gender}}</td></tr>
+                            <tr *ngIf="selectedItem.gender == 'Female'">
+                                <td>Pregnant:</td>
+                                <td *ngIf="selectedItem.pregnantStatus;else no">Yes</td>
+                            </tr>
+                            <ng-template #no><td>No</td></ng-template>
+                            <tr><td>Height:</td><td>{{selectedItem.height}}</td></tr>
+                            <tr><td>Weight:</td><td>{{selectedItem.weight}}</td></tr>
+                            <tr><td>B.M.I:</td><td>{{selectedItem.bmi}}</td></tr>
+
+                            <tr><td>Dietary Custom:</td><td>{{selectedItem.dietaryCustom}}</td></tr>
+                            <tr><td>Existing Diet Restriction:</td><td *ngIf="selectedItem.dietaryRestriction;else no">{{selectedItem.dietaryRestriction}}</td></tr>
+                            <tr><td>Existing Medical Condition:</td><td *ngIf="selectedItem.medicalCondition;else no">{{selectedItem.medicalCondition}}</td></tr>
+
+                            <tr><td>Email:</td><td>{{selectedItem.email}}</td></tr>
+                            <tr><td>Mobile:</td><td>{{selectedItem.mobile}}</td></tr>
+
+                            <tr><td>Address:</td><td>{{selectedItem.address}}, {{selectedItem.city}}, {{selectedItem.state}}-{{selectedItem.pincode}}, {{selectedItem.country}}</td></tr>
+                        
+                            <tr><td>Reason for Sign Up:</td><td>{{selectedItem.reason}}</td></tr>
+                            <tr>
+                                <td>
+                                    <input type="text" (input)="setReason($event.target.value)" placeholder="Enter Rejection Reason" class="form-control" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><button class="btn btn-dark" (click)="reviewAction(true)">Approve</button>&nbsp;&nbsp;&nbsp;
+                                <button class="btn btn-dark" [disabled]="!reason" (click)="reviewAction(false)">Reject</button></td>
+                            </tr>
+                        </div>
+                    </table>
+                    <div *ngIf="message" class="invalid col">
+                        {{message}}
+                    </div>
+                    <div>
+                        <app-review-sign-up-paginator [size]="allPendingLength" (selectedPage)="display($event)"></app-review-sign-up-paginator>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

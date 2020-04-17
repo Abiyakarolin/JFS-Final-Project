@@ -1,0 +1,26 @@
+<nav class="navbar navbar-danger bg-danger">
+    <a class="navbar-brand" href="#">
+      <img src="assets/m-logo-2.jpg" width="40" height="40" alt="FitMe" class="d-inline-block align-top">
+      &nbsp;
+      <b class="text-white">FitMe</b>
+    </a>
+    <div *ngIf="dietService.isloggedUser;then loggedIn else notloggedIn"></div>
+    <ng-template #notloggedIn>
+        <form class="form-inline">
+            <a class="btn btn-danger btn-outline-warning my-2 my-sm-0 nav-item text-white" routerLink="/user/signIn"><b>Sign In</b></a>
+            &nbsp;&nbsp;&nbsp;
+            <a class="btn btn-danger btn-outline-warning my-2 my-sm-0 nav-item text-white" routerLink="/user/signUp"><b>Sign Up</b></a>
+        </form> 
+    </ng-template>
+    <ng-template #loggedIn>
+        <form class="form-inline">
+            <a class="btn btn-danger btn-outline-warning my-2 my-sm-0 nav-item text-white" routerLink="/user/dashboard"><b>Dashboard</b></a>
+            &nbsp;&nbsp;&nbsp;
+            <a class="btn btn-danger btn-outline-warning my-2 my-sm-0 nav-item text-white" routerLink="/donate"><b>Donate</b></a>
+            &nbsp;&nbsp;&nbsp;
+            <a class="btn btn-danger btn-outline-warning my-2 my-sm-0 nav-item text-white" routerLink="/user/signOut"><b>Sign Out</b></a>
+        </form>
+    </ng-template>
+</nav>
+
+

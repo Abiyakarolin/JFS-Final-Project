@@ -1,0 +1,39 @@
+<div class="custom-pad">
+    <div class="card shadow shadow-lg border-dark text-dark">
+        <div class="card-header text-white bg-dark">
+            <h4 class="card-title">Daily Log History</h4>
+        </div>
+        <div class="card-body">
+            <div class="card-text">
+                <div *ngIf="dailyLogs && dailyLogs.length>0; else noLogs">
+                    <table class="table">
+                        <thead class="thead">
+                            <tr>
+                                <th>Date (yyyy-MM-dd)</th>
+                                <th>Breakfast</th>
+                                <th>Lunch</th>
+                                <th>Dinner</th>
+                                <th>Fruits Consumed</th>
+                                <th>Vegetables Consumed</th>
+                                <th>Workout Done</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let dailyLog of dailyLogs">
+                                <td>{{dailyLog.dailyLogKey.date}}</td>
+                                <td>{{dailyLog.breakfast}}</td>
+                                <td>{{dailyLog.lunch}}</td>
+                                <td>{{dailyLog.dinner}}</td>
+                                <td>{{dailyLog.fruitsConsumed}}</td>
+                                <td>{{dailyLog.vegetablesConsumed}}</td>
+                                <td>{{dailyLog.workoutDone}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <ng-template #noLogs><p class="invalid">No Logs Found!</p></ng-template>
+            </div>
+        </div>
+    </div>
+</div>
+

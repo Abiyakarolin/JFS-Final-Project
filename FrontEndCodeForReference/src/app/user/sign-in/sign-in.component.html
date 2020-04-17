@@ -1,0 +1,51 @@
+
+<div class="custom-pad custom-background">
+  <div class="card mx-auto border-danger custom-card shadow">
+      <div class="card-header text-white bg-danger">
+          <h4 class="card-title">Sign In to FitMe!</h4>
+      </div>
+      <div class="card-body">
+          <!--<img src="assets/h-logo.jpg" width="40" height="60" alt="HealthifyMe" class="d-inline-block align-center" align="center">-->
+          <form [formGroup]="loginForm" (ngSubmit)="login()" class="card-text">
+              <div class="form-group">
+                  <label for="username">User Name:</label>
+                  <input type="text" id="username" name="username" formControlName="username" placeholder="Enter Your Email" class="form-control" (input)="resetMsg()">
+                  <div *ngIf="username.invalid && username.touched" class="invalid">
+                      <div *ngIf="username.errors.required">
+                          User Id can't be blank
+                      </div>
+                      <div *ngIf="username.errors.pattern">
+                          User Id doesn't seem right
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group"> 
+                  <label for="password">Password:</label>
+                  <input type="password" name="password" id="password" formControlName="password" placeholder="Enter Your Password" class="form-control" (input)="resetMsg()">
+                  <div *ngIf="password.invalid && password.touched" class="invalid">
+                      <div *ngIf="password.errors.required">
+                          Password can't be blank
+                      </div>
+                      <div *ngIf="password.errors.minlength">
+                          Password must be minimum 6 characters
+                      </div>
+                      <div *ngIf="password.errors.maxlength">
+                          Password must be maximum 20 characters
+                      </div>
+                  </div>
+              </div>
+              <div>
+                  <div>
+                      <button type="submit" class="btn btn-danger" [disabled]="!loginForm.valid">Sign In</button>
+                  </div>
+                  <div align="right">
+                      <a routerLink="/user/forgotPassword">Forgot Password?</a>
+                  </div>
+              </div>
+              <div *ngIf="message" class="invalid">
+                {{message}}
+            </div>
+          </form>
+      </div>
+  </div>
+  </div>

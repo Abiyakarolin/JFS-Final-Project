@@ -1,0 +1,49 @@
+<div class="custom-pad">
+    <div class="card shadow shadow-lg border-dark text-dark">
+        <div class="card-header text-white bg-dark">
+            <h4 class="card-title">Today's Daily Log</h4>
+        </div>
+        <div class="card-body">
+            <div class="card-text">
+                <div *ngIf="dailyLog;else notFilled">
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <td>User Id</td>
+                                <td>{{dailyLog.dailyLogKey.user.email}}</td>
+                            </tr>
+                            <tr>
+                                <td>Breakfast</td>
+                                <td>{{dailyLog.breakfast}}</td>
+                            </tr>
+                            <tr>
+                                <td>Lunch</td>
+                                <td>{{dailyLog.lunch}}</td>
+                            </tr>
+                            <tr>
+                                <td>Dinner</td>
+                                <td>{{dailyLog.dinner}}</td>
+                            </tr>
+                            <tr>
+                                <td>Fruits Consumed</td>
+                                <td>{{dailyLog.fruitsConsumed}}</td>
+                            </tr>
+                            <tr>
+                                <td>Vegetables Consumed</td>
+                                <td>{{dailyLog.vegetablesConsumed}}</td>
+                            </tr>
+                            <tr>
+                                <td>Workout Done</td>
+                                <td>{{dailyLog.workoutDone}}</td>
+                            </tr>    
+                        </tbody>
+                    </table>
+                </div>
+                <ng-template #notFilled><p class="invalid">Daily log has not yet been filled today!</p><br><br></ng-template>
+                <br>
+                <button type="button" (click)="onViewHistory()" class="btn btn-dark">View History</button>
+            </div>
+        </div>
+    </div>
+</div>
+

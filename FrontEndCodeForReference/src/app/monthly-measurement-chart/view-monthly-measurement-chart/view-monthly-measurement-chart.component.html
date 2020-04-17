@@ -1,0 +1,65 @@
+<div class="custom-pad">
+        <div class="card shadow shadow-lg border-dark text-dark">
+            <div class="card-header text-white bg-dark">
+                <h4 class="card-title">Monthly Measurement Chart</h4>
+            </div>
+            <div class="card-body">
+                <div class="card-text">
+                    <div *ngIf="monthlyMeasurementChart;else notFilled">
+                        <table class="table table-bordered">
+                            <tbody>
+                                <tr>
+                                    <td>User Email</td>
+                                    <td>{{monthlyMeasurementChart.id.user.email}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Height</td>
+                                    <td>{{monthlyMeasurementChart.height}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Weight</td>
+                                    <td>{{monthlyMeasurementChart.weight}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Chest</td>
+                                    <td>{{monthlyMeasurementChart.chest}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Waist</td>
+                                    <td>{{monthlyMeasurementChart.waist}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Shoulder</td>
+                                    <td>{{monthlyMeasurementChart.shoulder}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Biceps</td>
+                                    <td>{{monthlyMeasurementChart.biceps}}</td>
+                                </tr> 
+                                <tr>
+                                    <td>Forearm</td>
+                                    <td>{{monthlyMeasurementChart.forearm}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Leg</td>
+                                    <td>{{monthlyMeasurementChart.leg}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Thighs</td>
+                                    <td>{{monthlyMeasurementChart.thighs}}</td>
+                                </tr>
+                                <tr>
+                                    <td>B.M.I</td>
+                                    <td>{{monthlyMeasurementChart.bmi}}</td>
+                                </tr>   
+                            </tbody>
+                        </table>
+                    </div>
+                    <ng-template #notFilled><p class="invalid">Monthly Measurement Chart has not yet been filled for this month!</p><br><br></ng-template>
+                    <br>
+                    <button type="button" (click)="onViewHistory()" class="btn btn-dark">View History</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    

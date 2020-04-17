@@ -1,0 +1,46 @@
+<div class="custom-pad">
+    <div class="card border-danger shadow shadow-lg">
+        <div class="card-body">
+            <form (ngSubmit)="search()" [formGroup]="searchForm">
+                <div class="row">
+                    <div class="form-group col">
+                        <label for="filter">Filter:</label>
+                        <select formControlName="filter" class="form-control" id="filter" name="filter">
+                            <option *ngFor="let category of categories" value="{{category}}">{{category}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group col">
+                        <label for="filterValue">Value:</label>
+                        <input type="text" id="filterValue" name="filterValue" formControlName="filterValue" class="form-control">
+                        <div *ngIf="filterValue.invalid && filterValue.touched" class="invalid">
+                            Value doesn't seem right
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col">
+                    <button type="submit" class="btn btn-dark" [disabled]="!searchForm.valid">Search</button>
+                </div>
+            </form>
+            <div *ngIf="users && users.length > 0">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>User Id</th>
+                            <th>Full Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let user of users">
+                            <td>{{user?.userId}}</td>
+                            <td>{{user?.fullname}}</td>
+                            <td>{{user?.email}}</td>
+                            <td>{{user?.userType}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

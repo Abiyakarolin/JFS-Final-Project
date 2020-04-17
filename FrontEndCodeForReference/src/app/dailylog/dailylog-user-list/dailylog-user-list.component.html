@@ -1,0 +1,48 @@
+<div class="custom-pad">
+    <div class="card shadow shadow-lg border-dark text-dark">
+        <div class="card-header text-white bg-dark">
+            <h4 class="card-title">Daily Log Status</h4>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label for="batch">Batch:</label>
+                <select id="batch" class="form-control" name="batch" (change)="onBatchChange($event.target.value)">
+                    <option selected value="Select Batch">Select Batch</option>
+                    <option *ngFor="let batch of batches" value="{{batch.batchId}}">{{batch.batchId}}</option>
+                </select>
+            </div>
+            <div *ngIf="isBatchSelected">
+                <div class="form-group">
+                    <label for="group">Group:</label>
+                    <select id="group" name="group" class="form-control" (change)="onGroupChange($event.target.value)">
+                        <option selected value="Select Group">Select Group</option>
+                        <option *ngFor="let group of groups" value="{{group.groupsId}}">{{group.groupsId}}</option>
+                    </select>
+                </div>
+            </div>
+            <div *ngIf="isGroupSelected">
+                <div *ngIf="status && status.length > 0;else noUsers">
+                    <table class="table">
+                        <thead class="thead">
+                            <tr>
+                                <th>No.</th>
+                                <th>User Email</th>
+                                <th>Status</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let stat of status; index as i">
+                                <td>{{i+1}}</td>
+                                <td>{{stat.userEmail}}</td>
+                                <td>{{stat.status}}</td>
+                                <td><button type="button" class="btn btn-dark" (click)="onUserSelect(stat.userEmail)">View</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <ng-template #noUsers><p class="invalid">There are no users in this group!</p></ng-template>
+            </div>
+        </div>
+    </div>
+</div>

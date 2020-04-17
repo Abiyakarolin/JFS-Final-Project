@@ -1,0 +1,26 @@
+<div class="custom-pad">
+    <div>
+        <div class="jumbotron text-center bg-white shadow border border-danger text-dark">
+            <div class="container">
+                <h1 class="jumbotron-heading">Welcome {{role}}!</h1>
+                <hr class="my-4">
+                <p>
+                    {{context}}
+                </p>
+                <p>
+                    <button class="btn btn-dark my-2" (click)="myProfile()">My Profile</button>&nbsp;&nbsp;&nbsp;
+                    <a routerLink="/user/changePwd" class="btn btn-dark text-white">Change Password</a>
+                </p>
+            </div>
+        </div>
+    </div>
+<div *ngIf="role ==='Admin'">
+    <app-admin-dash-board></app-admin-dash-board>
+</div>
+<div *ngIf="role ==='Challenger'">
+    <app-challenger-dash-board></app-challenger-dash-board>
+</div>
+<div *ngIf="role ==='Motivator'">
+    <app-motivator-dash-board></app-motivator-dash-board>
+</div>
+</div>

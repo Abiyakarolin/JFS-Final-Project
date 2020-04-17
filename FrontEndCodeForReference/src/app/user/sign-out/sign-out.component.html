@@ -1,0 +1,7 @@
+<div class="card">
+    <h1 *ngIf="signedOut;else other">Please Stay on this Page. You are being signed out</h1>
+    <ng-template #other>
+        <h1>You have been signed out successfully. Please sign in again.</h1>
+    </ng-template>
+    </div>
+    
