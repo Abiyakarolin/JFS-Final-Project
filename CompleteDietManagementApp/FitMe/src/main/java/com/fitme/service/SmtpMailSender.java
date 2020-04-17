@@ -50,7 +50,7 @@ public class SmtpMailSender implements MailService{
    	  
    	  SimpleMailMessage mail = new SimpleMailMessage();
    	  mail.setTo(user.getEmail());
-         mail.setFrom("msnasa11@gmail.com");
+         mail.setFrom("xyz@gmail.com");
          mail.setSubject(subject);
          mail.setText(message);
          try{
