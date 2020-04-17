@@ -2,51 +2,17 @@ insert into
 user(user_Id,fullname,age,gender,mobile,email,address,city,state,country,
      pincode,height,weight,bmi,reason,medical_Condition,dietary_Restriction,dietary_Custom,
      pregnant_Status,referral_Code,password,user_Type,friends_Referral_Code,Is_Approved) 
-values (1,'Carolin',25,'Female',1234567890,'msnasa11@gmail.com','Kovilur','Dindigul','TN',
+values (1,'Carolin',25,'Female',1234567890,'msnasa1112@gmail.com','Kovilur','Dindigul','TN',
         'India',624005,162,55,21,'To improve strength','Normal','No','Non-Vegetarian','No','KA1234','$2a$10$ceiJRdCUhxihm4z/F/9wyeqICITurlcu/7DuIlGUK358DmC.FnTLi','Admin','AB1234','true');
         
 insert into 
 user(user_Id,fullname,age,gender,mobile,email,address,city,state,country,
      pincode,height,weight,bmi,reason,medical_Condition,dietary_Restriction,dietary_Custom,
      pregnant_Status,referral_Code,password,user_Type,friends_Referral_Code,Is_Approved) 
-values (2,'Carolin',25,'Female',1234567890,'msnasa111@gmail.com','Kovilur','Dindigul','TN',
+values (2,'Carolin',25,'Female',1234567890,'msnasa113@gmail.com','Kovilur','Dindigul','TN',
         'India',624005,162,55,21,'To improve strength','Normal','No','Non-Vegetarian','No','KA1235','$2a$10$ceiJRdCUhxihm4z/F/9wyeqICITurlcu/7DuIlGUK358DmC.FnTLi','Motivator','AB1235','true');
         
         
-insert into 
-user(user_Id,fullname,age,gender,mobile,email,address,city,state,country,
-     pincode,height,weight,bmi,reason,medical_Condition,dietary_Restriction,dietary_Custom,
-     pregnant_Status,referral_Code,password,user_Type,friends_Referral_Code,Is_Approved) 
-values (3,'Abiya',25,'Female',1234567890,'pmsabiya0@gmail.com','Kovilur','Dindigul','TN',
-        'India',624005,162,55,21,'To improve strength','Normal','No','Non-Vegetarian','Yes','KA1236','$2a$10$MC1D3HU/1mu6wqzhGHD5zenQRFwiB/4HSS0qJ3HTCDr/8yNQHhA3y','Motivator','AB1235','true');
-        
-insert into 
-user(user_Id,fullname,age,gender,mobile,email,address,city,state,country,
-     pincode,height,weight,bmi,reason,medical_Condition,dietary_Restriction,dietary_Custom,
-     pregnant_Status,referral_Code,password,user_Type,friends_Referral_Code,Is_Approved) 
-values (4,'Abiya1',25,'Female',1234567890,'pmsabiya1@gmail.com','Kovilur','Dindigul','TN',
-        'India',624005,162,55,21,'To improve strength','Normal','No','Vegetarian','Yes','KA1237','$2a$10$MC1D3HU/1mu6wqzhGHD5zenQRFwiB/4HSS0qJ3HTCDr/8yNQHhA3y','Motivator','AB1235','true');
-        
-insert into 
-user(user_Id,fullname,age,gender,mobile,email,address,city,state,country,
-     pincode,height,weight,bmi,reason,medical_Condition,dietary_Restriction,dietary_Custom,
-     pregnant_Status,referral_Code,password,user_Type,friends_Referral_Code,Is_Approved) 
-values (5,'Abiya2',25,'Female',1234567890,'pmsabiya2@gmail.com','Kovilur','Dindigul','TN',
-        'India',624005,162,55,21,'To improve strength','Normal','No','Vegetarian','Yes','KA1238','$2a$10$MC1D3HU/1mu6wqzhGHD5zenQRFwiB/4HSS0qJ3HTCDr/8yNQHhA3y','Motivator','AB1235','true');
-        
-insert into 
-user(user_Id,fullname,age,gender,mobile,email,address,city,state,country,
-     pincode,height,weight,bmi,reason,medical_Condition,dietary_Restriction,dietary_Custom,
-     pregnant_Status,referral_Code,password,user_Type,friends_Referral_Code,Is_Approved) 
-values (6,'Abiya3',25,'Female',1234567890,'pmsabiya3@gmail.com','Kovilur','Dindigul','TN',
-        'India',624005,162,55,21,'To improve strength','Normal','No','Vegetarian','Yes','KA1232','$2a$10$MC1D3HU/1mu6wqzhGHD5zenQRFwiB/4HSS0qJ3HTCDr/8yNQHhA3y','Motivator','AB1235','true');
-
-insert into 
-user(user_Id,fullname,age,gender,mobile,email,address,city,state,country,
-     pincode,height,weight,bmi,reason,medical_Condition,dietary_Restriction,dietary_Custom,
-     pregnant_Status,referral_Code,password,user_Type,friends_Referral_Code,Is_Approved) 
-values (7,'Abiya4',25,'Female',1234567890,'pmsabiya4@gmail.com','Kovilur','Dindigul','TN',
-        'India',624005,162,55,21,'To improve strength','Normal','No','Vegetarian','Yes','KA1230','$2a$10$MC1D3HU/1mu6wqzhGHD5zenQRFwiB/4HSS0qJ3HTCDr/8yNQHhA3y','Challenger','AB1235','true');
 
 
 
